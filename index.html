@@ -2,94 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Test Page</title>
+  <title>Search - Test Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f3f3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff;
     }
 
-    .login-container {
-      background-color: white;
-      padding: 30px 40px;
-      border: 1px solid #ddd;
-      width: 100%;
-      max-width: 350px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .container {
+      margin-top: 15%;
     }
 
-    .login-container h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
+    .logo {
+      font-size: 48px;
       font-weight: bold;
-      font-size: 14px;
+      color: #4285f4;
     }
 
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #a6a6a6;
-      border-radius: 3px;
-      box-sizing: border-box;
+    .logo span:nth-child(2) { color: #ea4335; }
+    .logo span:nth-child(3) { color: #fbbc05; }
+    .logo span:nth-child(4) { color: #34a853; }
+    .logo span:nth-child(5) { color: #ea4335; }
+    .logo span:nth-child(6) { color: #fbbc05; }
+
+    .search-box {
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      width: 60%;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 24px;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      outline: none;
+    }
+
+    .buttons {
+      margin-top: 20px;
     }
 
     button {
-      width: 100%;
-      background-color: #f0c14b;
-      border: 1px solid #a88734;
-      padding: 10px;
-      font-size: 16px;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 14px;
+      background-color: #f8f9fa;
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
       cursor: pointer;
-      border-radius: 3px;
     }
 
     button:hover {
-      background-color: #e2b33c;
+      border: 1px solid #ccc;
     }
 
-    .footer-text {
-      font-size: 12px;
-      margin-top: 20px;
-      color: #555;
-      text-align: center;
+    .result {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <div class="login-container">
-    <h1>Sign-In</h1>
-    <form onsubmit="return handleLogin(event)">
-      <label for="email">Email or mobile phone number</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-
-      <button type="submit">Sign-In</button>
-    </form>
-    <div class="footer-text">
-      © 2025 Test Site, Inc. or its affiliates
+  <div class="container">
+    <div class="logo">
+      <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
     </div>
+
+    <div class="search-box">
+      <form onsubmit="return showResult(event)">
+        <input type="text" id="searchInput" placeholder="Search..." required>
+        <div class="buttons">
+          <button type="submit">Google Search</button>
+          <button type="button" onclick="feelingLucky()">I'm Feeling Lucky</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="result" id="result"></div>
   </div>
 
   <script>
-    function handleLogin(event) {
-      event.preventDefault(); // prevent form from submitting
-      alert('Login attempted. (This is a test page.)');
+    function showResult(event) {
+      event.preventDefault();
+      const query = document.getElementById('searchInput').value;
+      document.getElementById('result').textContent = `You searched for: "${query}"`;
+    }
+
+    function feelingLucky() {
+      document.getElementById('result').textContent = `I'm Feeling Lucky clicked! (Test behavior)`;
     }
   </script>
 
