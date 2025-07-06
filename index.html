@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Session</title>
+  <meta charset="UTF-8">
+  <title>Test Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to DevOps .... Lab</h1>
-    <h2>HTML Table</h2>
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>G & M</td>
-    <td>Gamal Mohammad</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>G & M</td>
-    <td>Gamal Mohammad</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>G & M</td>
-    <td>Gamal Mohammad</td>
-    <td>UK</td>
-  </tr>
-</table>
+
+  <h1>Welcome to the Test Page</h1>
+  <p>If you can see this, your server is working correctly.</p>
+  
+  <button onclick="showMessage()">Click Me</button>
+  <p id="message"></p>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').textContent = 'Button clicked! JavaScript is working.';
+    }
+  </script>
+
 </body>
 </html>
